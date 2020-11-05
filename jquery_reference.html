@@ -9,7 +9,7 @@
 
 
     <body>
-        <h3>JQuery Dersleri</h3>
+        <h3 id="header">JQuery Dersleri</h3>
         <ul id="liste">
             <li>JQuery Reference</li>
             <li>Selectors <a href="#">link</a> </li>
@@ -19,7 +19,7 @@
 
 
         <ul>
-            <li>JQuery Reference</li>
+            <li class="item">JQuery Reference</li>
             <li>Selectors <a href="#">link</a> </li>
             <li class="item">JQuery Plugins</li>    
             
@@ -35,7 +35,43 @@
             console.log($(".item"));
             console.log($("ul li a"));
             console.log($("#liste li a"));
+
+            document.getElementById("header").style.color="red";
             
+            
+            $("#liste a").css("color","pink");
+            $("a").css("text-decoration","none");
+            
+            var stylesjq ={
+                color:"yellow",
+                fontSize:"20px",
+                border:"1px solid red"
+                 
+            }
+
+
+            $("ul li").css(stylesjq);
+
+
+            var stylesjs =document.querySelectorAll("li");
+
+            for(var i=0;i<stylesjs.length;i++){
+
+                stylesjs[i].style.color="red";
+
+            }
+            $("a").css({
+                color:"yellow",
+                fontSize:"20px",
+                border:"1px solid darkblue",
+                background:"blue"
+                 
+            });
+            $(".item").css({
+                display:"none"
+            });
+
+
         </script>
     </body>
 </html>
