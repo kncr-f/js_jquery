@@ -1,0 +1,77 @@
+<html>
+    <head>
+
+        <title>Jquery</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+        <style>
+            .highlight
+            {
+
+                background-color: yellow;
+                display: none;
+            }
+
+            .green
+            {
+                background-color: green;
+            }
+
+
+
+        </style>
+
+    </head>
+
+
+    <body>
+        <h1>JQuery Helper Methods</h1>
+        <ul>
+            <li>Jquery Selectors</li>
+            <li>Jquery Methods</li>
+            <li>Juquery Animations</li>
+
+        </ul>
+
+        <img src="img/koala.png" alt="" width="200" >
+
+        <br> <br>
+
+        <input id="name" type="text" placeholder="Full Name" value="Your Name" />
+
+        <input id="surname" type="text" class="green" placeholder="Full Name" value="Your Surname" />
+
+        <button id="btnSave" onclick="fullName();">Save</button>
+
+
+
+        <script>
+                console.log($("h1").text());
+                console.log($("ul").text());
+                console.log($("ul li").text());
+                $("h1").text("Javascript");
+                console.log($("input").val());
+                $("input").val("Changing Value");
+
+
+               
+                $("img").attr("width","400");
+
+                function fullName(){
+                    var firstName=$("#name").val();
+                    var surname=$("#surname").val();
+                    console.log("adiniz ve soyadiniz :"+firstName+" "+surname);
+
+                    // $("#name").addClass("highlight");
+                    $("#name").toggleClass("highlight");
+
+                    $("#surname").removeClass("green");
+                    
+                }
+
+
+
+
+
+        </script>
+    </body>
+</html>
