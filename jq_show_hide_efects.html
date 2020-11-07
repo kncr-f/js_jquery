@@ -1,0 +1,38 @@
+<html>
+    <head>
+
+        <title>Jquery</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+
+        
+    </head>
+
+
+    <body>
+       <p>Web Development Education
+           <br>
+           Show & Hide Methods
+       </p>
+
+       <button id="hide">Hide</button>
+       <button id="show">Show</button>
+       <button id="toggle" >Toggle</button>
+        
+        <script>
+             $(function(){
+                 $("#hide").click(function(){
+                     $("p").hide(3000);
+                 });
+                 $("#show").click(function(){
+                     $("p").show("fast",function(){
+                         alert("show must go on")
+                     });
+                 });
+                 $("#toggle").click(function(){
+                     $("p").toggle("slow");
+                 })
+             })
+            
+        </script>
+    </body>
+</html>
