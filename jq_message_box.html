@@ -1,0 +1,78 @@
+<html>
+    <head>
+
+        <title>Jquery</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+
+        <style>
+            body{
+                margin:0;
+                padding:0;
+            }
+            #message-box{
+                background-color: green;
+                text-align: center;
+                color: white;
+               
+            }
+
+            #header{
+                cursor: pointer;
+                height: 25px;
+                padding: 10px;
+                border-bottom: 1px solid #fff;
+            }
+
+            #content{
+                height: 200px;
+                padding: 10px;
+                display: none;
+            }
+            .delete{
+                float: right;
+            }
+            .delete:hover{
+            color: rebeccapurple;
+
+            }
+                
+            
+
+       
+          
+
+       
+
+        </style>
+
+        <script>   
+
+        $(function(){
+            $("#header").click(function(){
+                $("#content").toggle("slow");
+            });
+            $(".delete").click(function(){
+                $("#message-box").hide("slow");
+            })
+        })    
+                    
+                    
+        </script>
+    </head>
+
+
+    <body>
+       
+        <div id="message-box">
+            <div id="header">
+                You have a message
+                <span class="delete">X</span>
+            </div>
+            <div id="content">
+
+            </div>
+        </div>
+
+        
+    </body>
+</html>
