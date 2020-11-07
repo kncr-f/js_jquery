@@ -1,0 +1,46 @@
+<html>
+    <head>
+
+        <title>Jquery</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+
+        <style>
+            .paragraphcolor
+            {
+                color: red;
+                font-size: 25px;
+            }
+        </style>
+    </head>
+
+
+    <body>
+       
+        <p id="p1">Web Developer Education</p>
+        <p id="p2">Web Developer Education</p>
+        <p class="paragraph">Web Developer Education</p>
+        <p class="paragraph">Web Developer Education</p>
+
+    
+
+        <script>
+              
+            // $(document).ready(function(){
+
+            // });
+
+            $(function(){
+
+                $("#p1").click(function(){
+                    alert("p1 click event");
+                });
+
+                $(".paragraph").click(function(){
+                    $(this).addClass("paragraphcolor");
+                })
+
+            });
+            
+        </script>
+    </body>
+</html>

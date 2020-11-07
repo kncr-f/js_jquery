@@ -1,0 +1,41 @@
+<html>
+    <head>
+
+        <title>Jquery</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+
+        
+    </head>
+
+
+    <body>
+       
+        <form action="#">
+
+            <p>
+                Ad: <input class="control"  type="text">
+            </p>
+
+            <p>
+                Hobiler: <select class="control">
+                    <option value="spor" selected="selected" >Spor</option>
+                    <option value="cinema">Cinema</option>
+                </select>
+            </p>
+
+
+
+
+        </form>
+
+        <script>
+              $(function(){
+                  $(".control").change(function(){
+                    console.log($(this).val());
+                  })
+              })
+            
+            
+        </script>
+    </body>
+</html>
