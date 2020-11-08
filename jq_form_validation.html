@@ -1,0 +1,128 @@
+<html>
+    <head>
+
+        <title>Jquery</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+
+        <style>
+
+            body{
+                font-size: 180%;
+                }
+            #wrapper{
+                width: 700px;
+                margin: 0 auto;
+                }
+
+            input {
+                padding: 15px;
+                font-size: 25px;
+                border-radius: 5px;
+                border: 1px solid grey;
+                width: 440px;
+                }
+            label{
+                display: inline-block;
+                width: 250px;
+                }
+            .form-group{
+                margin-bottom: 15px;
+                }
+            button{
+                background-color: #4caf50;
+                color: #fff;
+                padding: 14px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                border: none;
+                margin-top: 20px;
+                width: 100%;
+
+                }
+            #error{
+                color: red;
+            }
+            
+        </style>
+    </head>
+
+
+    <body> 
+        <div id="wrapper">
+
+            <div id="error">
+            
+
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail : </label>
+                <input type="text" name="email" id="email" placeholder="Your email">
+            </div>  
+            <div class="form-group">
+                <label for="phone">Telephone : </label>
+                <input type="text" name="phone" id="phone" placeholder="Your phone">
+            </div>  
+            <div class="form-group">
+                <label for="password">Password : </label>
+                <input type="text" name="password" id="password" placeholder="Your password">
+            </div>  
+            <div class="form-group">
+                <label for="confirmpassword">Confirm Password : </label>
+                <input type="text" name="confirmpassword" id="confirmpassword" placeholder="Confirm password">
+            </div>  
+            <button id="btn">Kaydet</button>
+
+
+        </div>
+            
+      <script>
+          $(function(){
+
+              
+
+              function isEmail(email){
+                var pattern = /^([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)@([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)[\\.]([a-zA-Z]{2,9})$/;
+                return pattern.test(email);
+              }
+             
+              $("#btn").click(function(){
+
+                  var errormessage="";
+                  $("#error").html("");
+
+                  if($("#email").val()==""){
+                      errormessage+="<p>E-Mail must be filled out!</p>";
+                  };
+
+                  if(isEmail($("#email").val())==false){
+
+                      errormessage+="<p>Unvalid E-mail!</p>";
+                  }
+
+
+                  if($.isNumeric($("#phone").val())==false){
+                    errormessage+="<p>Phone number must content only numbers!</p>";
+                  };
+
+
+                  if($("#phone").val()==""){
+                    errormessage+="<p>Phone must be filled out!</p>";
+                  };
+                  if($("#password").val()==""){
+                    errormessage+="<p>Password must be filled out!</p>";
+                  };
+                  if($("#password").val()!=$("#confirmpassword").val()){
+                    errormessage+="<p>Passwords can not be matched</p>";
+                  };
+                  if(errormessage!=""){
+                      $("#error").html(errormessage);
+                  }
+
+              });
+          })
+      </script>
+       
+        
+    </body>
+</html>
